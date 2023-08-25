@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dependecy injection
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Learning\Faq\Api\Data\QuestionInterface" type="Learning\Faq\Model\Question" />
+    <preference for="Learning\Faq\Api\QuestionRepositoryInterface" type="Learning\Faq\Model\QuestionRepository" />
+    <preference for="Learning\Faq\Api\QuestionManagementInterface" type="Learning\Faq\Model\QuestionManagement" />
+    <preference for="Learning\Faq\Api\Data\QuestionSearchResultsInterface" type="Learning\Faq\Model\QuestionSearchResults" />
+
+    <virtualType name="Learning\Faq\Model\ResourceModel\Question\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">learning_faq</argument>
+            <argument name="resourceModel" xsi:type="string">Learning\Faq\Model\ResourceModel\Question</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="learning_faq_question_listing_data_source" xsi:type="string">Learning\Faq\Model\ResourceModel\Question\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,19 @@
+<!--
+/**
+ * Database schema
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
++    <table name="learning_faq">
++        <column xsi:type="int" name="id" identity="true" unsigned="false" nullable="false" comment="id"/>
++        <column xsi:type="text" name="question" nullable="false" comment="User question"/>
++        <column xsi:type="text" name="answer" nullable="false" comment="Answer to question"/>
++        <column xsi:type="smallint" name="status" unsigned="true" nullable="false" default="0" comment="Status code"/>
++        <column xsi:type="int" name="position" unsigned="true" nullable="false" default="0" comment="position"/>
++        <column xsi:type="timestamp" name="updated_at" on_update="true" default="CURRENT_TIMESTAMP" comment="Time when updated"/>
++        <constraint xsi:type="primary" referenceId="PRIMARY">
++            <column name="id"/>
++        </constraint>
++    </table>
+</schema>

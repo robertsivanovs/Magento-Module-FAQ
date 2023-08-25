@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \Learning\Faq\Block\QuestionList $block
+ */
+$sortedfaqData = $block->displayFaqData();
+?>
+
+<div id="question-container">
+    <?php foreach ($sortedfaqData as $question) : ?>
+        <div class="collapsible" data-role="collapsible">
+            <div class="trigger" data-role="trigger">
+               <span><?= $question->getQuestion(); ?></span>
+            </div>
+        </div>
+        <div data-role="content"><?= $question->getAnswer(); ?></div>
+    <?php endforeach; ?>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+        $("#question-container").accordion();
+    });
+
+    $("#question-container").accordion({
+        header : "#title-1",
+        content : "#content-1",
+        trigger : "#trigger-1",
+        ajaxUrlElement: "a"
+ });
+</script>
