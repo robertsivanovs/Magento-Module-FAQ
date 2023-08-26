@@ -21,5 +21,17 @@ To run:
 
 ![Admin form](https://i.imgur.com/EtINAOU.png "Admin form")
 
+### Mass actions
+
+![Mass actions](https://i.imgur.com/qkKeVAH.png "Mass actions")
+
+### Editing directly within the form:
+
+![Admin form editing](https://i.imgur.com/BcYG42j.png "Admin form editing")
+
+### Add new question / Edit form:
+
+![Add / Edit form](https://i.imgur.com/fAzC5QY.png "Add / Edit form")
+
 ### Front end (For customers):
 ![Customers](https://i.imgur.com/vkUBtCJ.png "Customer view")
