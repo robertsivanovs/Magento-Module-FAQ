@@ -21,7 +21,6 @@
         </item>
     </argument>
     <dataSource name="learning_faq_question_listing_data_source">
-
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
             <argument name="name" xsi:type="string">learning_faq_question_listing_data_source</argument>
@@ -29,17 +28,15 @@
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" path="mui/index/render" xsi:type="url"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
                 </item>
             </argument>
         </argument>
-        <argument name="data" xsi:type="array">
-            <item name="js_config" xsi:type="array">
-                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
-            </item>
-        </argument>
     </dataSource>
-
     <container name="listing_top">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
